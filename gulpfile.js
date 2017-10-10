@@ -22,13 +22,8 @@ gulp.task('optimisation', () =>
         .pipe(imagemin({ 
           interlaced: true,
           progressive: true,
-          optimizationLevel: 1,
-          imagemin.svgo({
-              plugins: [
-                  {removeViewBox: false},
-                  {cleanupIDs: false}
-              ]
-          })
+          optimizationLevel: 6,
+          svgoPlugins: [{removeViewBox: false}, {cleanupIDs: false}]
         }))
         .pipe(gulp.dest('dist/img'))
 );
