@@ -5,8 +5,8 @@ var phone = 768;
 var windowWidth = $(window).width(),
     lang = $('html').attr('lang'),
     body = $('body'),
-    selectmenuMultiple_home = $(".multiselect select"),
-    selectmenu_step2 = $("#known");
+    selectmenuMultiple = $(".multiselect select"),
+    selectmenu = $("#known");
 
 function setDDdesktop(elements) {
 
@@ -132,45 +132,6 @@ $(document).ready(function(){
 // $("header").append("<div class='burger'><div></div><div></div><div></div></div>");
 
 
-// SWIPER ======================= /
-
-// var swiper = new Swiper('.swiper-container', {
-//     pagination: '.swiper-pagination',
-//     nextButton: '.swiper-button-next',
-//     prevButton: '.swiper-button-prev',
-//     slidesPerView: 6,
-//     paginationClickable: true,
-//     spaceBetween: 30,
-//     loop: true,
-//     breakpoints: {
-//         // when window width is <= 499px
-//         300: {
-//             slidesPerView: 1,
-//             spaceBetweenSlides: 30
-//         },
-//         // when window width is <= 499px
-//         400: {
-//             slidesPerView: 2,
-//             spaceBetweenSlides: 30
-//         },
-//         // when window width is <= 600px
-//         600: {
-//             slidesPerView: 3,
-//             spaceBetweenSlides: 30
-//         },
-//         // when window width is <= 768px
-//         768: {
-//             slidesPerView: 4,
-//             spaceBetweenSlides: 30
-//         },
-//         // when window width is <= 999px
-//         999: {
-//             slidesPerView: 5,
-//             spaceBetweenSlides: 30
-//         }
-//     }
-//     });
-
 // SCROLL DELAY DE NOTRE OLI mais à ... ========================= /
 
 // $(window).scroll(function(){
@@ -189,43 +150,44 @@ $(document).ready(function(){
 
 // SWIPER SLIDER ========================= /
 
-
-	var swiper = new Swiper('.swiper-container', {
-    pagination: '.swiper-pagination',
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
-    slidesPerView: 1,
-    paginationClickable: true,
-    spaceBetween: 1,
-    loop: true,
-    // breakpoints: {
-    //     // when window width is <= 499px
-    //     300: {
-    //         slidesPerView: 1,
-    //         spaceBetweenSlides: 30
-    //     },
-    //     // when window width is <= 499px
-    //     400: {
-    //         slidesPerView: 2,
-    //         spaceBetweenSlides: 30
-    //     },
-    //     // when window width is <= 600px
-    //     600: {
-    //         slidesPerView: 3,
-    //         spaceBetweenSlides: 30
-    //     },
-    //     // when window width is <= 768px
-    //     768: {
-    //         slidesPerView: 4,
-    //         spaceBetweenSlides: 30
-    //     },
-    //     // when window width is <= 999px
-    //     999: {
-    //         slidesPerView: 5,
-    //         spaceBetweenSlides: 30
-    //     }
-    // }
-    });
+    if ($("body").hasClass("home")) {
+    	var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        nextButton: '.swiper-button-next',
+        prevButton: '.swiper-button-prev',
+        slidesPerView: 1,
+        paginationClickable: true,
+        spaceBetween: 1,
+        loop: true,
+        // breakpoints: {
+        //     // when window width is <= 499px
+        //     300: {
+        //         slidesPerView: 1,
+        //         spaceBetweenSlides: 30
+        //     },
+        //     // when window width is <= 499px
+        //     400: {
+        //         slidesPerView: 2,
+        //         spaceBetweenSlides: 30
+        //     },
+        //     // when window width is <= 600px
+        //     600: {
+        //         slidesPerView: 3,
+        //         spaceBetweenSlides: 30
+        //     },
+        //     // when window width is <= 768px
+        //     768: {
+        //         slidesPerView: 4,
+        //         spaceBetweenSlides: 30
+        //     },
+        //     // when window width is <= 999px
+        //     999: {
+        //         slidesPerView: 5,
+        //         spaceBetweenSlides: 30
+        //     }
+        // }
+        });
+    }
 
 
 
@@ -238,14 +200,16 @@ $(document).ready(function(){
 //     $("#myModal").modal();
 //   });
 // });
+    
 
+    if ($("body").hasClass("form")) {
     // Stylize dropdown menus
         if(windowWidth>phone) { // Desktop
             // setDDdesktop(selectmenu_home);
-            setDDMdesktop(selectmenuMultiple_home);
+            setDDMdesktop(selectmenuMultiple);
         } else { // Mobile
             // setDDmobile(selectmenu_home);
-            setDDMmobile(selectmenuMultiple_home);
+            setDDMmobile(selectmenuMultiple);
         }
 
         // Range the km around location
@@ -297,13 +261,6 @@ $(document).ready(function(){
             });
           } );
 
-        // TAG CHANGE COLOR ON CLICK ============ /
-        // $('.tags li a').on('click', function(){
-        //     var thisis = $(this);
-        //     $('.tags li a').addClass('noselected');
-        //     thisis.removeClass('noselected');
-        // });
-
         // Date picker attribute ===========/
         $( "#datepicker" ).datepicker({
             // Desactived Week End
@@ -314,10 +271,42 @@ $(document).ready(function(){
 
         // Stylize dropdown menus
         if(windowWidth>phone) { // Desktop
-            setDDdesktop(selectmenu_step2);
+            setDDdesktop(selectmenu);
         } else { // Mobile
-            setDDmobile(selectmenu_step2);
+            setDDmobile(selectmenu);
         }
+    }
+    var $current = $("li").hasClass('current');
+    
+    // $current.show();
+    $('.next').on('click', function(){
+        var slideCur = $(this).attr('data-slide-next');
+        var slideNext = 0;
+        var slidePrev = "";
+        var imageDataValue = $('li').attr('data-image');
+        var lastCharData = imageDataValue.substr(imageDataValue.length - 1);
+        var test = lastCharData-1;
+
+        // $('li')removeClass('current');
+        if (slideCur == "") {
+            slideNext = 1;
+
+          } else {
+            slideNext = parseInt(slideCur) +1;
+            slidePrev = slideCur-1;
+        }
+        $('.next').attr('data-slide-next', slideNext);
+        $('.prev').attr('data-slide-prev', slidePrev);
+    });
+
+    // $('.previous').on('click', function(){
+    //     var $current = $("li").first();
+    //     if ($current.prev("li").length > 0) {
+    //         $current = $current.prev("li");
+    //       } else {
+    //         $current = $("li").first();
+    //     }
+    // });
 
 });
 
@@ -329,7 +318,7 @@ $(window).resize(function() {
 
     windowWidth = $(this).width();
 
-    // Page - Home
+    if ($("body").hasClass("form")) {
 
         if(windowWidth>phone) { // Desktop
 
@@ -343,27 +332,28 @@ $(window).resize(function() {
     
         if(windowWidth>phone) { // Desktop
 
-            setDDMdesktop(selectmenuMultiple_home);
+            setDDMdesktop(selectmenuMultiple);
 
         } else { // Mobile
 
-            setDDMmobile(selectmenuMultiple_home);
+            setDDMmobile(selectmenuMultiple);
 
         }
 
 
 
-    // Page - step_2
+
 
         if(windowWidth>phone) { // Desktop
 
-            setDDdesktop(selectmenu_step2);
+            setDDdesktop(selectmenu);
 
         } else { // Mobile
 
-            setDDmobile(selectmenu_step2);
+            setDDmobile(selectmenu);
 
         }
+    }
 
 
 });
