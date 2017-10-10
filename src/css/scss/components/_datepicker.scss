@@ -1,0 +1,130 @@
+// DATE PICKER DOC
+
+.ui-widget-content{
+	background-image: none;
+	border: 1px solid #ddd;
+}
+/* DatePicker Container */
+#ui-datepicker-div {
+	width: 300px;
+	height: 316px;
+	margin: 5px auto 0;
+	font: 9pt Arial, sans-serif;
+	background-color: #f3f3f3;
+	padding: 0 20px;
+	z-index: 2 !important;
+	overflow: hidden;
+	a{
+		text-decoration: none;
+	}
+	// Header of date picket
+	.ui-datepicker-header {
+		color: #022171;
+		font-weight: bold;
+		border: none;
+		background: none;
+		// Custom next and previous
+		.ui-datepicker-prev {
+			float: left;
+			background-position: center -30px;
+			.ui-icon{
+				transform: rotate(180deg);
+			}
+		}
+		.ui-datepicker-next {
+			float: right;
+			background-position: center 0px;
+		}
+		.ui-datepicker-prev, .ui-datepicker-next {
+			display: inline-block;
+			cursor: pointer;
+			line-height: 600%;
+			overflow: hidden;
+		 	background-repeat: no-repeat;
+		    position: absolute;
+		    top: 33px;
+		    transform: translateY(-50%);
+		    transform-origin: center;
+		    right: 0;
+		    .ui-icon{
+				background: url(../img/arrow-next.svg) no-repeat 0 0;
+				width: 20px;
+				height: 20px;
+			}
+		}
+		.ui-datepicker-next-hover, .ui-datepicker-prev-hover{
+			background-repeat: no-repeat;
+			background-color: transparent !important;
+			border: none !important;
+		}
+		.ui-datepicker-prev-hover{
+			background-position: center -30px;
+		}
+		.ui-corner-all{
+			border-radius: 0;
+			border: none;
+		}
+		// Date Month and Year
+		.ui-datepicker-title {
+			text-align: center;
+			padding: 12px 0;
+			text-transform: uppercase;
+			font-weight: normal;
+			.ui-datepicker-year{
+				display: block;
+			}
+		}
+	}
+	// Table date
+	.ui-datepicker-calendar{
+		width: 100%;
+		background-color: #fff;
+		// Days date
+		thead {
+			background-color: none;
+			border-bottom: 1px solid #cbced3;
+			tr{
+				th{
+					text-transform: uppercase;
+					font-size: 12px;
+					padding: 5px 0;
+					color: orange;
+					font-weight: normal;
+				}
+			}
+		}
+		// date for the month
+		tbody{
+			tr{
+				border-bottom: 1px solid #cbced3;
+				td{
+					border-right: 1px solid #cbced3;
+					padding: 0;
+					a.ui-state-default, span.ui-state-default{
+						display: flex;
+						align-items:center;
+						justify-content: center;
+						padding: 10px;
+						background-image: none;
+						border: none;
+						background-color: #fff;
+						color: blue;
+					}
+					// The current day
+					a.ui-state-highlight{
+						background-image: none;
+						background-color: orange;
+						color: #fff;
+					}
+					a.ui-state-hover{
+						background-color: orange;
+						color: #fff;
+					}
+					span.ui-state-default{
+
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,26 @@
+//----------  responsive breakpoints
+//------------------------------------------------------------------------------
+@mixin breakpoint ($value) {
+	@if $value == 'mobile' {
+		@media only screen and (max-width: 500px) { @content; }
+	} @else if $value == 'phone' {
+		@media only screen and (max-width: 768px) { @content; }
+	} @else if $value == 'tablet' {
+		@media only screen and (max-width: 1024px) { @content; }
+	} @else if $value == 'desktop' {
+		@media only screen and (max-width: 1400px) { @content; }
+	} @else {
+		@media only screen and (max-width: $value) { @content; }
+	}
+}
+
+// ----------- effect animation
+// ------------------------------------------------------------------------------
+
+@mixin transition($duree : .3s) {
+	transition:$duree all ease-in-out;
+}
+
+@mixin animate($name: anim, $duree:.3s){
+	animation:$name $duree infinite alternate;
+}

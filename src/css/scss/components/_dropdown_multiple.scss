@@ -1,0 +1,25 @@
+// DROPDOWN MULTIPLE JQUERY DOC ==============/
+
+
+.multiselect-input{
+  width: 100%;
+  border: 1px solid #a0a4aa;
+  border-radius: 0 0 4px 4px;
+  height: 92px;
+  @include breakpoint(phone) {
+      height: 36px;
+  }
+  option{
+    padding: 8px 0 8px 10px;
+    color: #5e6268;
+    font-size: 14px;
+    &:hover{
+      background: #e8eaed;
+      color: blue;
+    }
+    &:focus{
+      background: red;
+      color: #fff;
+    }
+  }
+}

@@ -1,0 +1,162 @@
+// Replace value by name of break point ** mixins.scss -------
+
+@include breakpoint(value) {
+    // properties
+}
+
+// Section forms =======================/
+
+.form_custom div{
+	margin: 10px 0 50px;
+}
+
+// GRID for flex ========================/
+
+.grid{
+	display: flex;
+	flex-flow: row nowrap;
+	height: 500px;
+	// justify-items: center;
+	border-bottom: 1px solid #fff;
+	.item{
+		background-color: #2bc6bf;
+		width: 100%;
+		&:nth-of-type(odd){
+			background-color: #42f4eb;
+		}
+		a{
+			display: block;
+			height: 100%;
+			display: flex;
+			justify-content: center;
+			align-items:center;
+			color: #fff;
+		}
+	}
+}
+
+// GRID for bootstrap ========================/
+
+// .row{
+// 	margin-right: 0;
+// 	margin-left: 0;
+// }
+
+// section{
+// 	height: 250px;
+// 	border-bottom: 1px solid #fff;
+// 	margin-right: 0;
+// 	margin-left: 0;
+// 	div{
+// 		background-color: #2bc6bf;
+// 		width: 100%;
+// 		height: 100%;
+// 		&:nth-of-type(odd){
+// 			background-color: #42f4eb;
+// 		}
+// 		@media screen and (max-width: 991px) {
+// 			&:nth-of-type(n1+1){
+// 				background-color: #42f4eb;
+// 			}
+// 		}
+// 		a{
+// 			display: block;
+// 			height: 100%;
+// 			display: flex;
+// 			justify-content: center;
+// 			align-items:center;
+// 			color: #fff;
+// 			font-size: 2em;
+// 		}
+// 	}
+// }
+
+// CONTAINER for slick ========================/
+
+.container {
+  margin: 0 auto;
+  padding: 40px;
+  width: 100%;
+  color: #333;
+  background: #419be0;
+	div{
+		h3{
+			background-size: cover;
+			margin: 0;
+			img{
+				width: 100%;
+			}
+		}
+	}
+}
+
+// .slick-slide {
+//   text-align: center;
+//   color: #419be0;
+//   background: white;
+//   height: 400px;
+// }
+
+
+// GALERY vertical  ========================/
+
+.galery-vert{
+	.gallery { 
+	    column-count: 3;
+	    column-gap: 10px;
+	    margin-top: 10px;
+	  	overflow: hidden;
+	  	img{
+	  		width: 100%; 
+		    height: auto;
+		    transition: 500ms;
+		    margin-bottom: 10px;
+		    opacity: 0.8;
+		    &:hover{
+		    	opacity: 1;
+		    }
+	  	}
+	}
+
+	.modal-img,.model-vid{
+	  width:100%;
+	  height:auto;
+	}
+	.modal-body{
+	  padding:0px;
+	}
+
+	.modal-dialog {
+	    text-align: center;
+	    vertical-align: middle;
+	    display: block;
+	    top: 10%;
+	}
+
+	.modal-content {
+	  border: none;
+	}
+
+	@media screen and (max-width: 767px) {
+		.gallery { 
+	        -webkit-column-count: 2;
+	        -moz-column-count: 2;
+	        column-count: 2;
+	    }
+		.gallery div { margin: 0; 
+	        width: 200px;
+	    }
+	}
+
+	@media screen and (max-width: 479px) {
+	    .gallery { 
+	        -webkit-column-count: 1;
+	        -moz-column-count: 1;
+	        column-count: 1;
+	    }
+	    .gallery div { 
+	        margin: 0; 
+	        width: 200px;
+	    }
+	}
+}

@@ -1,0 +1,150 @@
+$greylight : #ccc;
+$greymiddle : #999;
+$greydark : #777a7f;
+$orange : #f29010;
+$white : #fff;
+$whitedark : #f3f3f3;
+$blue : blue;
+
+// *********************************** //
+// AusPost Stepper | 2016
+// Author: iamtyce.com
+// *********************************** //
+
+$stepper-desktop-padding: 20px;
+$stepper-mobile-padding: 10px;
+$stepper-font-size: 13px;
+$stepper-color-done: #178A00;
+$stepper-color-current: #006DFF;
+$stepper-color-pending: #807370;
+$stepper-color-hover: #000;
+$stepper-divider-color: #E2DFDA;
+
+$font-size-base: 15px !default;
+
+// Breakpoints
+
+$screen-xsm: 400px / $font-size-base + 0em;
+$screen-sm: 720px / $font-size-base + 0em;
+$screen-lg: 960px;
+
+// Placeholder Styles
+
+
+.step-wrap {
+  margin: 30px auto;
+  // background: #fff;
+  @include breakpoint(phone) {
+     margin: 10px 0;
+  }
+  @media (min-width: $screen-sm) {
+    max-width: 1500px;
+  }
+}
+
+.step-wrap {
+  margin: 30px auto;
+
+
+// Stepper
+
+.stepper {
+
+.stepper__list{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    @include breakpoint(phone) {
+      flex-direction: column;
+    }
+    .stepper__list__item{
+      padding: 5px;
+      text-align: center;
+      position: relative;
+      display: flex;
+      align-items: center;
+      @include breakpoint(phone) {
+        border-bottom: 1px solid $greymiddle;
+      }
+      @media (min-width: $screen-sm) {
+        padding: 10px;
+        flex-direction: column;
+        flex: 1;
+      }
+      .circle{
+        background-color: #cacaca;
+        width: 27px;
+        height: 27px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $white;
+        cursor: default;
+      }
+      .stepper__list__title{
+        margin: 15px 0 0 0;
+        color: $blue;
+        @include breakpoint(phone) {
+          margin: 0 0 0 15px;
+        }
+      }
+      &:after{
+        content: "";
+        display: block;
+        position: absolute;
+        z-index: 2;
+        width: calc(100% - 27px);
+        top: 30%;
+        right: calc(50% + 13px);
+        border-top: 1px solid $stepper-divider-color;
+        @include breakpoint(phone) {
+          border: none;
+        }
+      }
+      &:first-of-type{
+        &:after{
+          display: none;
+        }
+      }
+      &.active{
+        .circle{
+          background: $orange;
+          cursor: pointer;
+          &:after{
+            content: '';
+            display: block;
+            width: 23px;
+            height: 2px;
+            position: absolute;
+            left: 49.5%;
+            top: 55%;
+            transform: translateX(-50%);
+            background-image: url(../images/shadow-ico-grey.png);
+            @include breakpoint(tablet) {
+                background-image: none;
+            }
+          }
+        }
+        &:after{
+          border-top: 1px solid $orange;
+          @include breakpoint(phone) {
+            border: none;
+          }
+        }
+        &:first-of-type{
+          &:after{
+            border-top: 1px solid $stepper-divider-color;
+          }
+        }
+      }
+    }
+  
+}
+
+}
+
+}

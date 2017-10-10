@@ -1,0 +1,88 @@
+// DROPDOWN JQUERY DOC ==============/
+
+
+// Base of select input
+.ui-selectmenu-button.ui-button{
+  width: 100%;
+  border-radius: 4px;
+  background: #fff;
+  height: 37px;
+  line-height: 1.2em;
+  border: 1px solid #ddd;
+  color: blue;
+  margin-bottom: 8px;
+  padding-top: 10px;
+  outline: none;
+  font-size: 16px;
+  display: block;
+  border: 1px solid blue;
+  &:hover{
+    
+  }
+}
+
+// Delete items drop/down by default
+.ui-state-hover .ui-icon,
+.ui-state-focus .ui-icon,
+.ui-button:hover .ui-icon,
+.ui-button:focus .ui-icon {
+  background: none;
+}
+
+// Custom icon drop/down
+.ui-button{
+  .ui-icon{
+    width: 12px;
+    height: 12px;
+    border-right: 1px solid blue;
+    border-bottom: 1px solid blue;
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%) rotate(45deg);
+    transform-origin: center;
+    right: 10px;
+    transition: all .3s ease-in-out;
+    background-image: none;
+  }
+}
+
+// Define where display the box list items
+.ui-selectmenu-open{
+  margin-top: 1px;
+}
+
+// Box wrap of list items
+.ui-widget.ui-widget-content{
+  height: 123px;
+}
+
+// Color txt list li entries
+.ui-menu .ui-menu-item-wrapper{
+  padding: 6px 0 6px 1.0em;
+  text-transform: lowercase;
+  color: blue;
+}
+
+// Custom Item active in list items
+.ui-state-active, .ui-widget-content .ui-state-active{
+  color: #fff;
+  border: 1px solid blue;
+  background-color: #467ff2;
+}
+
+
+
+
+
+// CUSTOM SELECT VERSION MOBILE ==========/
+
+@include breakpoint(phone) {
+  .select-mobile-custom{
+    display: block;
+    margin: 0 auto 20px;
+    width: 100%;
+    height: 36px;
+    background: #fff;
+    border: 1px solid #ddd;
+  }
+}
