@@ -6,7 +6,7 @@ var windowWidth = $(window).width(),
     lang = $('html').attr('lang'),
     body = $('body'),
     selectmenuMultiple = $(".multiselect select"),
-    selectmenu = $("#known");
+    selectmenu = $("#select_dropdown");
 
 function setDDdesktop(elements) {
 
@@ -276,38 +276,35 @@ $(document).ready(function(){
             setDDmobile(selectmenu);
         }
     }
-    var $current = $("li").hasClass('current');
     
     // $current.show();
-    $('.next').on('click', function(){
-        var slideCur = $(this).attr('data-slide-next');
-        var slideNext = 0;
-        var slidePrev = "";
-        var imageDataValue = $('li').attr('data-image');
-        var lastCharData = imageDataValue.substr(imageDataValue.length - 1);
-        var test = lastCharData-1;
+    // $('.next').on('click', function(){
+    //     var slideCur = $(this).attr('data-slide-next');
+    //     var slideNext = 0;
+    //     var slidePrev = "";
+    //     // var imageFirst = $('li').attr('data-image');
+    //     var imageDataValue = $('li').attr('data-image');
+    //     var imagecurrent = $('li').attr('data-image', 'image-'+slideCur);
+    //     var lastCharData = imageDataValue.substr(imageDataValue.length - 1);
+    //     var img = lastCharData-1;
+    //     console.log(imagecurrent);
 
-        // $('li')removeClass('current');
-        if (slideCur == "") {
-            slideNext = 1;
-
-          } else {
-            slideNext = parseInt(slideCur) +1;
-            slidePrev = slideCur-1;
-        }
-        $('.next').attr('data-slide-next', slideNext);
-        $('.prev').attr('data-slide-prev', slidePrev);
-    });
-
-    // $('.previous').on('click', function(){
-    //     var $current = $("li").first();
-    //     if ($current.prev("li").length > 0) {
-    //         $current = $current.prev("li");
+    //     // $('li')removeClass('current');
+    //     if (slideCur == "" && imgcurrent == imageDataValue) {
+    //         slideNext = 1;
+    //         imageDataValue.addClass('current');
     //       } else {
-    //         $current = $("li").first();
+    //         slideNext = parseInt(slideCur) +1;
+    //         slidePrev = slideCur-1;
+            
+            
     //     }
+    //     $('.next').attr('data-slide-next', slideNext);
+    //     $('.prev').attr('data-slide-prev', slidePrev);
     // });
-
+    // var imageDataValue = $('li');
+    
+    
 });
 
 /* -----------------------

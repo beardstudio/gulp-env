@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Home</title>
+
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"> -->
+
+        <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.1/css/foundation.min.css"> -->
+
+
+
+        <!-- <link href="https://fonts.googleapis.com/css?family=Merriweather:400,700,900|Roboto:400,400i,500,500i" rel="stylesheet"> -->
+
+
+
+        <!-- <link rel="stylesheet" href=""> -->
+        
+        <link rel="stylesheet" href="css/style.css">
+
+        <!--[if gte IE 10]>
+          <link rel="stylesheet" href="css/style-ie.css">
+        <![endif]-->
+
+    </head>
+    <body class="home">
+        <header>
+        	<!-- <nav class="navhover">
+                <a href="#">Entre</a>
+                <a href="#">Entre</a>
+                <a href="#">Entre</a>
+                <a href="#">Entre</a>
+                <a href="#">Entre</a>
+                <a href="#">Entre</a>
+            </nav> -->
+        </header>
+
+
+        <section class="js">
+            <div class="button" data-name="François">
+                Bonjour 
+            </div>
+            <div class="callTo" style="width: 150px;">
+                
+            </div>
+        </section>
+        
+        
+
+        <footer>
+            
+        </footer>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+
+
+        <script>
+            function size() {
+                $('.callTo').on('click', function(){
+                    $(this).html('<div style="background-color:red; color:white;"> Mon petit canari </div>');
+                    $(this).animate({
+                            backgroundColor: 'green',
+                            width: '100%',
+                            height: '52px',
+                            fontSize: '52px'
+                        }, 1000);
+                });
+            }
+            $('.button').one('click', function(){
+                var $this = $(this);
+                var name = $this.attr('data-name');
+                $('<span class="size" style="color:red;">'+name+'</span>').appendTo($this);
+                $('.callTo').html('<div class="click" style="background-color: red; width: 20px;height: 20px;border-radius:50%"></div>')
+            }, size() );
+
+
+            
+
+            
+        </script>
+    </body>
+</html>
+
+

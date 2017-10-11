@@ -17,16 +17,18 @@
         </header>
 
         <section class="form_custom">
+
+            <form action="action.php" id="form">
             
-            <div class="input">
+            <!-- <div class="input">
                 <label for="email">E-mail</label>
                 <input type="email" placeholder="Votre mail" name="mail" id="email" class="placeholder_custom" required>
-            </div>
+            </div> -->
 
             <div class="select-style">
                 <label for="known">Menu Drop-Down</label>
-                <select name="known" id="known">
-                    <option value="known1" class="firstentry">Entrée 1</option>
+                <select name="known" id="select_dropdown">
+                    <option value="known1" class="firstentry">All</option>
                     <option value="known2">Entrée 2</option>
                     <option value="known3">Entrée 3</option>
                     <option value="known4">Entrée 4</option>
@@ -36,17 +38,17 @@
 
             <div class="textarea">
                 <label for="subject">Votre message</label>
-                <textarea placeholder="Pour toutes questions, contactez-nous !" class="placeholder_custom"></textarea>
+                <textarea placeholder="Pour toutes questions, contactez-nous !" class="placeholder_custom" required></textarea>
             </div>
 
             <div class="input_ac">
                 <label for="city"></label>
-                <input placeholder="Quelle commune" name="city" id="city" class="placeholder_custom">
+                <input placeholder="Quelle commune" name="city" id="city" class="placeholder_custom" required>
             </div>
 
             <div class="multiselect">
                 <label for="multiselect-input">Select multiple</label>
-                <select multiple="multiple" name="problem" form="carform" class="multiselect-input" id="multiselect-input">
+                <select multiple="multiple" name="problem" form="carform" class="multiselect-input" id="multiselect-input" required>
                     <option value="problem2" selected>Entrée 1</option>
                     <option value="problem3">Entrée 2</option>
                     <option value="problem4">Entrée 3</option>
@@ -68,8 +70,12 @@
             </div>
 
             <div class="calendar">
-                <input type="text" id="datepicker">
+                <input type="text" id="datepicker" required>
             </div>
+            <div calss="callAction">
+                <input type="submit" class="button">
+            </div>
+            </form>
 
         </section>
 

@@ -56,6 +56,11 @@
   height: 123px;
 }
 
+// Box wrap of item
+.ui-menu .ui-menu-item{
+  width: 100%;
+}
+
 // Color txt list li entries
 .ui-menu .ui-menu-item-wrapper{
   padding: 6px 0 6px 1.0em;
